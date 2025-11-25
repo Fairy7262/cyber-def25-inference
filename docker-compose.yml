@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  inference:
+    build: .
+    image: fairy7262/cyber-def25:latest
+    container_name: cyber_def25_inference
+    volumes:
+      - ./network_logs/:/input/logs/:ro
+      - ./output/:/output/:rw
+    # If inference needs extra env vars you can set them here:
+    environment:
+      - PYTHONUNBUFFERED=1
+    restart: "no"
+
+
