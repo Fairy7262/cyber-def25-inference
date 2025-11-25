@@ -51,7 +51,7 @@ pipeline {
     always {
       // Collect logs and workspace artifacts (optional)
       sh 'docker-compose down || true'
-      archiveArtifacts artifacts: 'output/**', allowEmptyArchive: true
+      archiveArtifacts artifacts: 'alerts.csv', allowEmptyArchive: true
     }
     success {
       echo "Pipeline completed successfully."
